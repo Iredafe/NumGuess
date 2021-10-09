@@ -36,7 +36,7 @@ guessBtn.addEventListener('click', function(){
        setMessage(`${winningNum} is correct, You WIN!`, 'green')
     } else{
         //wrong number
-        guessesLeft = -1;
+        guessesLeft -= 1;
 
         if(guessesLeft === 0){
             //game over - lost
@@ -46,9 +46,10 @@ guessBtn.addEventListener('click', function(){
        guessInput.style.borderColor = 'red';
    
        //set message
-       setMessage(`Game Over, You LOST!`, 'red')
+       setMessage(`Game Over, You lost. The correct Number was ${winningNum}!`, 'red')
         }else{
             //game continues - answer wrong
+            setMessage(`${guess} is not correct. You have ${guessesLeft} guesses left`, 'red')
         }
    }
 });
