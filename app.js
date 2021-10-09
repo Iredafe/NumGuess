@@ -18,10 +18,9 @@ maxNum.textContent = max;
 //listener for guess
 guessBtn.addEventListener('click', function(){
    let guess = parseInt(guessInput.value);
-
    //validate
    if(isNaN(guess) || guess < min || guess > max){
-        setMessage(`Please enter a number between ${min} and ${max}`);
+       return setMessage(`Please enter a number between ${min} and ${max}`, 'red');
    }
    //check if won
    if(guess===winningNum){
@@ -51,7 +50,11 @@ function gameOver(won, msg){
  //disable input
  guessInput.disabled = true;
  //set message
- setMessage(msg, color)
+ setMessage(msg, color);
+
+ //play again
+ guessBtn.value = 'Play Again';
+ guessBtn.className += 'play-again';
 }
 
 //set message
