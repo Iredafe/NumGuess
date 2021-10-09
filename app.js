@@ -1,7 +1,7 @@
 
 
 //game values
-let min=1, max = 10, winningNum = 2, guessesLeft = 3;
+let min=1, max = 10, winningNum = getRandomWinningNum(min, max), guessesLeft = 3;
 
 //ui elements
 const game = document.getElementById('game'),
@@ -52,6 +52,11 @@ guessBtn.addEventListener('click', function(){
         }
    }
 });
+
+//get winning number
+function getRandomWinningNum(min, max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
 
 //game over
 function gameOver(won, msg){
