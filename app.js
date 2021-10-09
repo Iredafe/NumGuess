@@ -29,6 +29,11 @@ guessBtn.addEventListener('click', function(){
        guessInput.disabled = true;
        //make border green
        guessInput.style.borderColor = 'green';
+   
+       //set message
+       setMessage(`${winningNum} is correct, You WIN!`, 'green')
+    } else{
+
    }
 });
 
@@ -36,6 +41,6 @@ guessBtn.addEventListener('click', function(){
 //set message
 function setMessage(msg, color){
 
-    message.getElementsByClassName.color = color;
+    message.style.color = color;
     message.textContent = msg
 }
