@@ -31,16 +31,10 @@ guessBtn.addEventListener('click', function(){
     } else{
         //wrong number
         guessesLeft -= 1;
-
         if(guessesLeft === 0){
             //game over - lost
-            //disable input
-       guessInput.disabled = true;
-       //make border green
-       guessInput.style.borderColor = 'red';
-   
-       //set message
-       setMessage(`Game Over, You lost. The correct Number was ${winningNum}!`, 'red')
+            let msg =`Game Over, You lost. The correct Number was ${winningNum}!`
+          gameOver(false,msg)
         }else{
             //game continues - answer wrong
             //change border color
